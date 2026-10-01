@@ -179,9 +179,138 @@ public class Main
         /*Ejercicio10. Realiza un programa que lea 10 números no nulos y luego muestre un mensaje de si ha
         leído algún número negativo o no.*/
 
-        Scanner negativos = new Scanner(System.in);
+         sc = new Scanner(System.in);
+
+        int positivos = 0;
+        int negativos = 0;
+        int contador = 0;
+        for (int i  = 1; i <= 10; i++ )
+        {
+            System.out.println("Introduce número " + i + ":");
+            int numero = sc.nextInt();
+             if(numero < 0)
+            {
+                contador++;
+            }
+        }
+        if (contador > 0)
+        {
+            System.out.println("Se han detectado números negativos");
+        }else {
+
+            System.out.println("No se han detectado números negativos");
+        }
 
 
+
+
+
+
+            /*Ejercicio 11. Realiza un programa que lea 10 números no nulos y luego muestre un mensaje
+            indicando cuántos son positivos y cuantos negativos.*/
+
+
+    sc = new Scanner(System.in);
+        int positivos1 = 0;
+        int negativos1 = 0;
+
+        for (int i1  = 1; i1 <= 10; i1++ )
+        {
+            System.out.println("Introduce número " + i1+ ":");
+            int numero1 = sc.nextInt();
+
+            if (numero1 < 0)
+            {
+                negativos++;
+            }else {
+                positivos++;
+            }
+        }
+        System.out.println("Positivos: " + positivos);
+        System.out.println("Negativos: " + negativos);
+
+        /*Ejercicio12.  Realiza un programa que lea una secuencia de números no nulos hasta que se introduzca
+        un 0, y luego muestre si ha leído algún número negativo, cuantos positivos y cuantos
+        negativos*/
+
+        int positivos2 = 0;
+        int negativos2 = 0;
+        int contador2 = 0;
+        int numero2 = 0;
+
+        System.out.println("Introduce los números que quieras. Introduce 0 para terminar");
+
+        do
+        {
+            numero2 = sc.nextInt();
+            if (numero2 > 0)
+            {
+                positivos2++;
+            } if(numero2 < 0) {
+                negativos2++;
+                contador2++;
+        }
+        } while (numero2 != 0);
+        System.out.println("Positivos: " + positivos2);
+        System.out.println("Negativos: " + negativos2);
+        if (contador2 > 0)
+        {
+            System.out.println("Se han detectado números negativos");
+        }else {
+
+            System.out.println("No se han detectado números negativos");
+        }
+        /*Ejercicio13. Realiza un programa que calcule y escriba la suma y el producto de los 10 primeros
+            números naturales.*/
+
+        int suma = 0;
+        int producto =1;
+        for (int i = 1; i <= 10; i++ )
+        {
+            suma = suma + i;
+            producto = producto * i;
+        }
+        System.out.println("Suma: " + suma);
+        System.out.println("Producto: " + producto);
+
+        /*Ejercicio14.. Escribe un programa que calcula el salario neto semanal de un trabajador en función del
+        número de horas trabajadas y la tasa de impuestos de acuerdo a las siguientes hipótesis: .*/
+
+        sc = new Scanner(System.in);
+
+        System.out.println("Introduce tu nombre");
+        String nombre = sc.next();
+
+        System.out.println("Introduce tus horas trabajadas");
+        int horasTrabajadas = sc.nextInt();
+
+        System.out.println("Introduce la tarifa por hora");
+        int tarifa = sc.nextInt();
+
+        double salarioBruto;
+
+        if (horasTrabajadas > 35)
+        {
+            salarioBruto = (horasTrabajadas *tarifa);
+        }else {
+
+           salarioBruto = (35 * tarifa) +  ((horasTrabajadas - 35) * tarifa * 1.5);
+        }
+
+        double impuestos;
+        if (salarioBruto <=500)
+        {
+            impuestos = 0;
+        }else if (salarioBruto <= 900) {
+            impuestos = (salarioBruto -500) * 0.25;
+        }else{
+            impuestos = (400 * 0.25) + (salarioBruto - 900) * 0.45 ;
+        }
+        double salarioNeto = salarioBruto - impuestos;
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Impuestos: " + impuestos);
+        System.out.println("Salario Bruto: " + salarioBruto);
+        System.out.println("Salario Neto: " + salarioNeto);
 
     }
 }
