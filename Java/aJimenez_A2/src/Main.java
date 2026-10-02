@@ -63,7 +63,7 @@ public class Main
          /*Ejercicio5. Realiza un programa que muestre los números pares comprendidos entre el 1 y el 200.
           Esta vez utiliza un contador sumando de 1 en 1. */
 
-        for (int i = 0; i <=200; i++ )
+        for (int i = 1; i <=200; i++ )
         {
 
             if (i % 2 == 0)
@@ -88,7 +88,7 @@ public class Main
 
         Scanner nota1 = new Scanner(System.in);
         System.out.println("¿Qúe nota has sacado?");
-        int nota = nota1.nextInt();
+        double nota = nota1.nextInt();
 
         if (nota <=3)
         {
@@ -98,11 +98,11 @@ public class Main
         {
             System.out.println("Insuficiente");
         }
-        else if (nota ==5)
+        else if (nota <=5 && nota <6 )
         {
             System.out.println("Suficiente");
         }
-        else if (nota ==6)
+        else if (nota <=6 && nota < 7 )
         {
             System.out.println("Bien");
         }
