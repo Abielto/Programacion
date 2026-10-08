@@ -13,8 +13,9 @@ public class Main
         número de billetes posible).*/
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce x euros");
-        int cantidad = sc.nextInt();
+        System.out.println("Introduce x euros multiplo de 5");
+        int cantidad = Math.abs(sc.nextInt());
+        String textoCantidad = "Se necesitan los siguiente billetes";
         int billetes500 = 0;
         int billetes200 = 0;
         int billetes100 = 0;
@@ -23,6 +24,11 @@ public class Main
         int billetes10 = 0;
         int billetes5 = 0;
 
+        if (cantidad %5 != 0)
+        {
+            IO.println("No es múltiplo de 5");
+            System.exit(0);
+        }
 
         if (cantidad >=500)
         {
@@ -68,23 +74,23 @@ public class Main
         sc = new Scanner(System.in);
 
         System.out.println("Introduce número 1");
-        System.out.println("Introduce número 2");
         int numero1 = sc.nextInt();
+        System.out.println("Introduce número 2");
         int numero2 = sc.nextInt();
-        int opcion;
+        String opcion;
         do
         {
+            sc =new Scanner(System.in);
             System.out.println("Elige una opción: 1: Sumar, 2: Restar, 3: Multiplicar 4: Dividir, 5: Salir");
-
-            switch  (opcion = sc.nextInt())
+            switch  (opcion = sc.nextLine())
                 {
-                    case 1: System.out.println(numero1 + numero2);
+                    case "1": System.out.println(numero1 + numero2);
                     break;
-                    case 2: System.out.println(numero1 - numero2);
+                    case "2": System.out.println(numero1 - numero2);
                     break;
-                    case 3: System.out.println(numero1 * numero2);
+                    case "3": System.out.println(numero1 * numero2);
                     break;
-                    case 4:
+                    case "4":
                         if (numero2 ==0)
                         {
                             System.out.println("No puedes dividir entre 0 ");
@@ -92,13 +98,13 @@ public class Main
                             System.out.println(numero1 / numero2);
                         }
                     break;
-                    case 5: /*cortar*/
+                    case "5":
                     break;
-                    default: System.out.println("Esa opción no es correcta");
-                    break;
+                    default: System.out.println("Esa opción no es válida");
+
 
                 }
-        }while (opcion != 5);
+        }while (opcion.equals("5"));
     }
 }
 

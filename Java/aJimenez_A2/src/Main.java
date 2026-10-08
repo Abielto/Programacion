@@ -181,25 +181,32 @@ public class Main
 
          sc = new Scanner(System.in);
 
-        int positivos = 0;
-        int negativos = 0;
+
         int contador = 0;
         for (int i  = 1; i <= 10; i++ )
         {
-            System.out.println("Introduce número " + i + ":");
+            System.out.println("Introduce número no nulo " + i + ":");
             int numero = sc.nextInt();
-             if(numero < 0)
+            if (numero < 0)
             {
                 contador++;
             }
-        }
-        if (contador > 0)
-        {
-            System.out.println("Se han detectado números negativos");
-        }else {
+            if (numero == 0)
+            {
+                IO.print("No se permiten números nulos ");
+                break;
 
-            System.out.println("No se han detectado números negativos");
+            }
         }
+
+            if (contador <0)
+            {
+                System.out.println("Se han detectado números negativos");
+            }else
+            {
+
+                System.out.println("No se han detectado números negativos");
+            }
 
 
 
@@ -221,13 +228,13 @@ public class Main
 
             if (numero1 < 0)
             {
-                negativos++;
+                negativos1++;
             }else {
-                positivos++;
+                positivos1++;
             }
         }
-        System.out.println("Positivos: " + positivos);
-        System.out.println("Negativos: " + negativos);
+        System.out.println("Positivos: " + positivos1);
+        System.out.println("Negativos: " + negativos1);
 
         /*Ejercicio12.  Realiza un programa que lea una secuencia de números no nulos hasta que se introduzca
         un 0, y luego muestre si ha leído algún número negativo, cuantos positivos y cuantos
@@ -263,8 +270,8 @@ public class Main
         /*Ejercicio13. Realiza un programa que calcule y escriba la suma y el producto de los 10 primeros
             números naturales.*/
 
-        int suma = 0;
-        int producto =1;
+        double suma = 0;
+        double producto =1;
         for (int i = 1; i <= 10; i++ )
         {
             suma = suma + i;
@@ -274,7 +281,7 @@ public class Main
         System.out.println("Producto: " + producto);
 
         /*Ejercicio14.. Escribe un programa que calcula el salario neto semanal de un trabajador en función del
-        número de horas trabajadas y la tasa de impuestos de acuerdo a las siguientes hipótesis: .*/
+        número de horas trabajadas y la tasa de impuestos de acuerdo a las siguientes hipótesis:.*/
 
         sc = new Scanner(System.in);
 
@@ -282,14 +289,14 @@ public class Main
         String nombre = sc.next();
 
         System.out.println("Introduce tus horas trabajadas");
-        int horasTrabajadas = sc.nextInt();
+        int horasTrabajadas = Math.abs(sc.nextInt());
 
         System.out.println("Introduce la tarifa por hora");
         int tarifa = sc.nextInt();
 
         double salarioBruto;
 
-        if (horasTrabajadas > 35)
+        if (horasTrabajadas >= 35)
         {
             salarioBruto = (horasTrabajadas *tarifa);
         }else {
